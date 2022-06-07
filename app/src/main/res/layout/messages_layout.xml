@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageviewMessageUser"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/user_image"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/textviewMessageReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/imageviewMessageUser"
+        android:background="@drawable/receiver_messages_layout"
+        android:padding="10dp"
+        android:text="Messages Receive"
+        android:textColor="#424242"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textviewReceiveTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01-01-2001 00:00 PM"
+        android:textSize="10sp"
+        android:layout_below="@+id/textviewMessageReceive"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp" />
+
+    <ImageView
+        android:id="@+id/imageviewMessageSend"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/sender_pics_layout"
+        android:padding="10dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/textviewSendPicTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageviewMessageSend"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:text="01-01-2001 00:00 PM"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/imageviewMessageReceive"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/imageviewMessageUser"
+        android:background="@drawable/receiver_pics_layout"
+        android:padding="10dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/textviewReceivePicTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageviewMessageReceive"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:text="01-01-2001 00:00 PM"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textviewMessageSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="@+id/textviewMessageReceive"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sender_messages_layout"
+        android:padding="10dp"
+        android:text="Messages Send"
+        android:layout_marginRight="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textviewSendTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01-01-2001 00:00 PM"
+        android:textSize="10sp"
+        android:layout_below="@+id/textviewMessageSend"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"/>
+
+</RelativeLayout>

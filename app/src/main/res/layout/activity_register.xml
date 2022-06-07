@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.RegisterActivity"
+    android:background="@color/theme_8"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng kí"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#424242"
+        android:textStyle="bold"/>
+
+
+    <EditText
+        android:id="@+id/edittextEmailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edt_background_white"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/edittextPasswordRegister"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edt_background_white"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Đăng kí ngay"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/btn_background_blue"/>
+
+    <TextView
+        android:id="@+id/textviewLoginRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:paddingStart="290dp"
+        android:paddingTop="10dp" />
+
+</LinearLayout>
