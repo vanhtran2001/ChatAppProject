@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Hàm check cập nhật hoạt động
+    //Hàm cập nhật trang thai hoạt động
     private void updateUserStatus(String state) {
         HashMap<String, Object> onlineStateMap = new HashMap<>();
         onlineStateMap.put("state", state);

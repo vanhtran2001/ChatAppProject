@@ -91,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if(task.isSuccessful()){
 
                         String currentUid = mAuth.getCurrentUser().getUid();
-                        databaseReference.child("Users").child(currentUid).setValue("");
+                        databaseReference.child("Users").child(currentUid).child("password").setValue(pass);
 
                         SendUserToLoginActivity();
                         Toast.makeText(RegisterActivity.this, "Tạo tài khoản thành công!", Toast.LENGTH_SHORT).show();

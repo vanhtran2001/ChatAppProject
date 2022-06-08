@@ -130,7 +130,7 @@ public class ChatFragment extends Fragment {
                             final String status = snapshot.child("status").getValue().toString();
 
                             holder.tvName.setText(name);
-
+                            //Hien thi Last Message
                             msgReference.child(currentUid).child(uid).orderByChild("date").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {

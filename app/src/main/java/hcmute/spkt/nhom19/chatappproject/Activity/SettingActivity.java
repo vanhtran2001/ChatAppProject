@@ -40,7 +40,7 @@ public class SettingActivity extends AppCompatActivity {
 
     //Khởi tại các biến để ánh xạ view
     private Button btnUpdate;
-    private EditText edtName, edtStatus;
+    private EditText edtName,edtPassword, edtStatus;
     private CircleImageView imgUser;
     private ImageView imgBack;
     //Khởi tạo biến xác định người đang đăng nhập
@@ -108,6 +108,7 @@ public class SettingActivity extends AppCompatActivity {
     private void Init() {
         btnUpdate = (Button) findViewById(R.id.buttonUpdate);
         edtName = (EditText) findViewById(R.id.edittextName);
+        edtPassword = (EditText) findViewById(R.id.edittextPassword);
         edtStatus = (EditText) findViewById(R.id.edittextStatus);
         imgUser = (CircleImageView) findViewById(R.id.imageviewProfile_image);
         imgBack = (ImageView) findViewById(R.id.imageviewBackSetting);
@@ -158,6 +159,7 @@ public class SettingActivity extends AppCompatActivity {
     //Hàm cập nhật tên và trạng thái cho người dùng
     private void UpdateSettings() {
         String username = edtName.getText().toString();
+        String password = edtPassword.getText().toString();
         String status = edtStatus.getText().toString();
 
         if(TextUtils.isEmpty(username)){
@@ -165,10 +167,18 @@ public class SettingActivity extends AppCompatActivity {
         }
         if(TextUtils.isEmpty(status)){
             Toast.makeText(this, "Vui lòng nhập trạng thái!", Toast.LENGTH_SHORT).show();
-        } else {
+        }
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Vui lòng nhập mật khẩu!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+
+            mAuth.getCurrentUser().updatePassword(password);
+
             HashMap<String, Object> user = new HashMap<>();
             user.put("uid", currentUid);
             user.put("name", username);
+            user.put("password", password);
             user.put("status", status);
             databaseReference.child("Users").child(currentUid).updateChildren(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -191,20 +201,25 @@ public class SettingActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists() && snapshot.hasChild("name") && snapshot.hasChild("image")){
                     String name = snapshot.child("name").getValue().toString();
+                    String password = snapshot.child("password").getValue().toString();
                     String status = snapshot.child("status").getValue().toString();
                     String image = snapshot.child("image").getValue().toString();
-
                     edtName.setText(name);
+                    edtPassword.setText(password);
                     edtStatus.setText(status);
                     Picasso.get().load(image).placeholder(R.drawable.user_image).into(imgUser);
 
                 } else if (snapshot.exists() && snapshot.hasChild("name")){
                     String name = snapshot.child("name").getValue().toString();
+                    String password = snapshot.child("password").getValue().toString();
                     String status = snapshot.child("status").getValue().toString();
 
                     edtName.setText(name);
+                    edtPassword.setText(password);
                     edtStatus.setText(status);
                 } else {
+                    String password = snapshot.child("password").getValue().toString();
+                    edtPassword.setText(password);
                     Toast.makeText(SettingActivity.this, "Vui lòng thiết lập thông tin của bạn!", Toast.LENGTH_SHORT).show();
                 }
             }

@@ -42,10 +42,26 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edittextStatus"
+        android:id="@+id/edittextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edittextName"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:hint="Mật Khẩu"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edittextStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittextPassword"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
