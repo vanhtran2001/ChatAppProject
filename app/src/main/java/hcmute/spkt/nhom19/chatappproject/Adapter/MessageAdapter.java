@@ -157,7 +157,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                     if(messagesList.get(position).getType().equals("text")) {
                         CharSequence option[] = new CharSequence[] {
-                                "Gỡ với bạn", "Gỡ với mọi người", "Hủy"
+                                "Gỡ với bạn", "Gỡ với mọi người"
                         };
                         AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
                         builder.setTitle("Gỡ tin nhắn");
@@ -176,9 +176,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                                     Intent intent = new Intent(holder.itemView.getContext(),ChatActivity.class);
                                     holder.itemView.getContext().startActivity(intent);
                                 }
-                                if(position == 2) {
-
-                                }
                             }
                         });
                         builder.show();
@@ -186,7 +183,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                     if(messagesList.get(position).getType().equals("image")) {
                         CharSequence option[] = new CharSequence[] {
-                                "Gỡ với bạn", "Gỡ với mọi người", "Hủy"
+                                "Gỡ với bạn", "Gỡ với mọi người"
                         };
                         AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
                         builder.setTitle("Gỡ hình ảnh");
@@ -204,9 +201,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                                     Intent intent = new Intent(holder.itemView.getContext(),ChatActivity.class);
                                     holder.itemView.getContext().startActivity(intent);
-                                }
-                                if(position == 2) {
-
                                 }
                             }
                         });
@@ -223,7 +217,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                     if(messagesList.get(position).getType().equals("text")) {
                         CharSequence option[] = new CharSequence[] {
-                                "Gỡ với bạn" , "Hủy"
+                                "Gỡ với bạn"
                         };
                         AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
                         builder.setTitle("Gỡ tin nhắn");
@@ -236,10 +230,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                                     Intent intent = new Intent(holder.itemView.getContext(),ChatActivity.class);
                                     holder.itemView.getContext().startActivity(intent);
                                 }
-
-                                if(position == 1) {
-
-                                }
                             }
                         });
                         builder.show();
@@ -247,7 +237,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                     if(messagesList.get(position).getType().equals("image")) {
                         CharSequence option[] = new CharSequence[] {
-                                "Gỡ với bạn", "Hủy"
+                                "Gỡ với bạn"
                         };
                         AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
                         builder.setTitle("Gỡ hình ảnh");
@@ -259,9 +249,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                                     Intent intent = new Intent(holder.itemView.getContext(),ChatActivity.class);
                                     holder.itemView.getContext().startActivity(intent);
-                                }
-                                if(position == 1) {
-
                                 }
                             }
                         });
